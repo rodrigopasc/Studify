@@ -7,4 +7,5 @@ target 'Studify' do
 
   # Pods for Studify
   pod 'Ambience'
+  pod 'RealmSwift'
 end

@@ -7,24 +7,37 @@
 //
 
 import UIKit
+import RealmSwift
 
 class StudyPlansTableViewController: UITableViewController {
-
+    let realm = try! Realm()
+    
+    let dateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "dd/MM/yyyy HH:mm"
+        return df
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        let studyPlans = realm.objects(StudyPlan.self)
+        return studyPlans.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let studyPlan = realm.objects(StudyPlan.self)[indexPath.row]
+        cell.textLabel?.text = studyPlan.title
+        cell.detailTextLabel?.text = dateFormatter.string(from: (studyPlan.remindAt)!)
         return cell
     }
     

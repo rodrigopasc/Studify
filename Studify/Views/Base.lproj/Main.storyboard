@@ -13,7 +13,7 @@
         <!--Meus estudos-->
         <scene sceneID="u3F-jK-VvM">
             <objects>
-                <tableViewController id="y4d-HT-W1q" customClass="StudyPlansTableViewController" customModule="Studify" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="y4d-HT-W1q" customClass="StudyPlansTableViewController" customModule="Studify" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yWd-1J-kGd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,6 +42,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </tableViewCell>
                         </prototypes>
                         <userDefinedRuntimeAttributes>
@@ -58,7 +61,13 @@
                                 <segue destination="ZVR-YJ-7GJ" kind="show" id="SUq-Pw-3JO"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BpW-go-DFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -72,23 +81,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Título" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ub3-5B-Kkw">
-                                <rect key="frame" x="25" y="158" width="320" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Título" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ub3-5B-Kkw">
+                                <rect key="frame" x="25" y="158" width="320" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Assunto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B3D-Lu-bfF">
-                                <rect key="frame" x="25" y="196" width="320" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Assunto" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B3D-Lu-bfF">
+                                <rect key="frame" x="25" y="183" width="320" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="t8c-JR-JkL">
-                                <rect key="frame" x="25" y="234" width="320" height="216"/>
+                                <rect key="frame" x="25" y="208" width="320" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="570308148.83594096">
                                     <!--2019-01-27 18:55:48 +0000-->
                                 </date>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHH-NM-uR5">
                                 <rect key="frame" x="25" y="217" width="0.0" height="0.0"/>
@@ -128,10 +146,13 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Novo estudo" id="ncg-RB-Kc1"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="studyPlanDateTime" destination="t8c-JR-JkL" id="Zpb-FT-6SZ"/>
-                        <outlet property="studyPlanSubject" destination="B3D-Lu-bfF" id="pnp-l5-0MH"/>
-                        <outlet property="studyPlanTitle" destination="Ub3-5B-Kkw" id="ULh-uG-QTm"/>
+                        <outlet property="dateTimeToSave" destination="t8c-JR-JkL" id="Zpb-FT-6SZ"/>
+                        <outlet property="subjectToSave" destination="B3D-Lu-bfF" id="pnp-l5-0MH"/>
+                        <outlet property="titleToSave" destination="Ub3-5B-Kkw" id="ULh-uG-QTm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Nx-ea-oCt" userLabel="First Responder" sceneMemberID="firstResponder"/>

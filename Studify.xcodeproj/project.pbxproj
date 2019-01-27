@@ -10,9 +10,7 @@
 		A101148F21FE3E6800B2CDCE /* StudyPlansTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A101148E21FE3E6800B2CDCE /* StudyPlansTableViewController.swift */; };
 		A101149121FE3EE100B2CDCE /* NewStudyPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A101149021FE3EE100B2CDCE /* NewStudyPlanViewController.swift */; };
 		A10B04F921FE44CE00AF5157 /* StudyPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10B04F821FE44CE00AF5157 /* StudyPlan.swift */; };
-		A10B04FB21FE476B00AF5157 /* StudyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10B04FA21FE476B00AF5157 /* StudyManager.swift */; };
 		A110F73C21F556FA005011BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A110F73B21F556FA005011BE /* AppDelegate.swift */; };
-		A110F73E21F556FA005011BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A110F73D21F556FA005011BE /* ViewController.swift */; };
 		A110F74121F556FA005011BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A110F73F21F556FA005011BE /* Main.storyboard */; };
 		A110F74321F556FB005011BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A110F74221F556FB005011BE /* Assets.xcassets */; };
 		A110F74621F556FB005011BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A110F74421F556FB005011BE /* LaunchScreen.storyboard */; };
@@ -24,10 +22,8 @@
 		A101148E21FE3E6800B2CDCE /* StudyPlansTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPlansTableViewController.swift; sourceTree = "<group>"; };
 		A101149021FE3EE100B2CDCE /* NewStudyPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStudyPlanViewController.swift; sourceTree = "<group>"; };
 		A10B04F821FE44CE00AF5157 /* StudyPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPlan.swift; sourceTree = "<group>"; };
-		A10B04FA21FE476B00AF5157 /* StudyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyManager.swift; sourceTree = "<group>"; };
 		A110F73821F556FA005011BE /* Studify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Studify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A110F73B21F556FA005011BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A110F73D21F556FA005011BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A110F74021F556FA005011BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A110F74221F556FB005011BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A110F74521F556FB005011BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,18 +73,40 @@
 		A110F73A21F556FA005011BE /* Studify */ = {
 			isa = PBXGroup;
 			children = (
+				A1FFB88621FE4FB6001DBFD5 /* Models */,
+				A1FFB88721FE4FBD001DBFD5 /* Views */,
+				A1FFB88821FE4FCB001DBFD5 /* Controllers */,
 				A110F73B21F556FA005011BE /* AppDelegate.swift */,
-				A110F73D21F556FA005011BE /* ViewController.swift */,
-				A110F73F21F556FA005011BE /* Main.storyboard */,
-				A10B04F821FE44CE00AF5157 /* StudyPlan.swift */,
-				A10B04FA21FE476B00AF5157 /* StudyManager.swift */,
 				A110F74221F556FB005011BE /* Assets.xcassets */,
-				A110F74421F556FB005011BE /* LaunchScreen.storyboard */,
 				A110F74721F556FB005011BE /* Info.plist */,
+			);
+			path = Studify;
+			sourceTree = "<group>";
+		};
+		A1FFB88621FE4FB6001DBFD5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A10B04F821FE44CE00AF5157 /* StudyPlan.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A1FFB88721FE4FBD001DBFD5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A110F73F21F556FA005011BE /* Main.storyboard */,
+				A110F74421F556FB005011BE /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A1FFB88821FE4FCB001DBFD5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				A101148E21FE3E6800B2CDCE /* StudyPlansTableViewController.swift */,
 				A101149021FE3EE100B2CDCE /* NewStudyPlanViewController.swift */,
 			);
-			path = Studify;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		DB831A18D5495241EBB84B2B /* Pods */ = {
@@ -179,12 +197,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Studify/Pods-Studify-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Ambience/Ambience.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ambience.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -223,9 +245,7 @@
 				A101149121FE3EE100B2CDCE /* NewStudyPlanViewController.swift in Sources */,
 				A10B04F921FE44CE00AF5157 /* StudyPlan.swift in Sources */,
 				A101148F21FE3E6800B2CDCE /* StudyPlansTableViewController.swift in Sources */,
-				A110F73E21F556FA005011BE /* ViewController.swift in Sources */,
 				A110F73C21F556FA005011BE /* AppDelegate.swift in Sources */,
-				A10B04FB21FE476B00AF5157 /* StudyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
