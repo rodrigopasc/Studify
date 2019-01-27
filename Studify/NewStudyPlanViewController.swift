@@ -13,10 +13,12 @@ class NewStudyPlanViewController: UIViewController {
     @IBOutlet weak var studyPlanSubject: UITextField!
     @IBOutlet weak var studyPlanDateTime: UIDatePicker!
     
+    let studyManager = StudyManager.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
     @IBAction func putOnSchedule(_ sender: UIButton) {
