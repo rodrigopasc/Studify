@@ -44,6 +44,9 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="y4d-HT-W1q" id="JjC-Pd-8i7"/>
                             <outlet property="delegate" destination="y4d-HT-W1q" id="sJN-m2-oOj"/>
@@ -120,6 +123,9 @@
                             <constraint firstItem="Ub3-5B-Kkw" firstAttribute="top" secondItem="eiv-Yx-DPd" secondAttribute="top" constant="18" id="zb0-Ks-uTu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eiv-Yx-DPd"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Novo estudo" id="ncg-RB-Kc1"/>
                     <connections>
