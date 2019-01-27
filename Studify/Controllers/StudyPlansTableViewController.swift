@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import UserNotifications
 
 class StudyPlansTableViewController: UITableViewController {
     let realm = try! Realm()
@@ -60,6 +61,7 @@ class StudyPlansTableViewController: UITableViewController {
             let studyPlan = realm.objects(StudyPlan.self)[indexPath.row]
             try! realm.write {
                 realm.delete(studyPlan)
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [studyPlan.id])
                 tableView.deleteRows(at: [indexPath], with: .automatic)
             }
         }
