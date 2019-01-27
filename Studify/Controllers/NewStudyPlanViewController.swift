@@ -16,7 +16,6 @@ class NewStudyPlanViewController: UIViewController {
     @IBOutlet weak var dateTimeToSave: UIDatePicker!
     
     let notificationContent = UNMutableNotificationContent()
-    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false)
     let realm = try! Realm()
     
     override func viewDidLoad() {
@@ -33,7 +32,7 @@ class NewStudyPlanViewController: UIViewController {
         newStudyPlan.done = false
         newStudyPlan.id = String(Date().timeIntervalSince1970)
         save(studyPlanToSave: newStudyPlan)
-        setupNotification(id: newStudyPlan.id, subject: newStudyPlan.subject)
+        setupNotification(id: newStudyPlan.id, body: newStudyPlan.subject, remindAt: newStudyPlan.remindAt!)
         navigationController!.popViewController(animated: true)
     }
     
@@ -43,11 +42,13 @@ class NewStudyPlanViewController: UIViewController {
         }
     }
     
-    func setupNotification(id: String, subject: String) {
+    func setupNotification(id: String, body: String, remindAt: Date) {
         notificationContent.title = "É hora de estudar! 🤓"
-        notificationContent.subtitle = "Chegou o momento de aprender \(subject)"
+        notificationContent.body = "Chegou o momento de aprender \(body)"
         notificationContent.categoryIdentifier = "Studify"
         
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: remindAt)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let request = UNNotificationRequest(identifier: id, content: notificationContent, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }

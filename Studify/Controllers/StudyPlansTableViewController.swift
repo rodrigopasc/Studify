@@ -20,6 +20,20 @@ class StudyPlansTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(onReceive(notification:)), name: NSNotification.Name(rawValue: "Confirmed"), object: nil)
+    }
+    
+    @objc func onReceive(notification: Notification) {
+        if let userInfo = notification.userInfo, let id = userInfo["id"] as? String {
+            
+            let studyPlan = realm.objects(StudyPlan.self).filter("id == %@", id).first
+ 
+            try! realm.write {
+                studyPlan!.done = true
+            }
+            
+            tableView.reloadData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,13 +43,13 @@ class StudyPlansTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let studyPlans = realm.objects(StudyPlan.self)
+        let studyPlans = realm.objects(StudyPlan.self).filter("done == %@", false)
         return studyPlans.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let studyPlan = realm.objects(StudyPlan.self)[indexPath.row]
+        let studyPlan = realm.objects(StudyPlan.self).filter("done == %@", false)[indexPath.row]
         cell.textLabel?.text = studyPlan.title
         cell.detailTextLabel?.text = dateFormatter.string(from: (studyPlan.remindAt)!)
         return cell

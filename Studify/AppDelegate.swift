@@ -8,14 +8,34 @@
 
 import UIKit
 import Ambience
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let notificationCenter = UNUserNotificationCenter.current()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         _ = Ambience.shared
+        
+        notificationCenter.delegate = self
+        notificationCenter.getNotificationSettings { (settings) in
+            if settings.authorizationStatus == .notDetermined {
+                let options: UNAuthorizationOptions = [.alert, .sound, .badge]
+                self.notificationCenter.requestAuthorization(options: options, completionHandler: { (success, error) in
+                    print((error != nil) ? error!.localizedDescription : success)
+                })
+            } else if settings.authorizationStatus == .denied {
+                // T0D0: Show to the user why it is needed to accept notifications.
+            }
+        }
+        
+        let confirmAction = UNNotificationAction(identifier: "Confirm", title: "Já estudei isso! 😉", options: [.foreground])
+        let cancelAction = UNNotificationAction(identifier: "Cancel", title: "Cancelar", options: [])
+        let category = UNNotificationCategory(identifier: "Studify", actions: [confirmAction, cancelAction], intentIdentifiers: [], options: [.customDismissAction])
+        
+        notificationCenter.setNotificationCategories([category])
         return true
     }
 
@@ -40,7 +60,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound, ])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let id = response.notification.request.identifier
+        switch response.actionIdentifier {
+        case "Confirm":
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Confirmed"), object: nil, userInfo: ["id": id])
+        case "Cancel":
+            // T0D0: Action when is cancelled.
+            print("Canceled")
+        case UNNotificationDefaultActionIdentifier:
+            // T0D0: Action when is clicked.
+            print("Default")
+        case UNNotificationDismissActionIdentifier:
+            // T0D0: Action when is dismissed.
+            print("Dismissed.")
+        default:
+            break
+        }
+    }
+}
