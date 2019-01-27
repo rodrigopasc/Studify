@@ -13,7 +13,7 @@
         <!--Meus estudos-->
         <scene sceneID="u3F-jK-VvM">
             <objects>
-                <tableViewController id="y4d-HT-W1q" sceneMemberID="viewController">
+                <tableViewController id="y4d-HT-W1q" customClass="StudyPlansTableViewController" customModule="Studify" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yWd-1J-kGd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,7 +64,7 @@
         <!--Novo estudo-->
         <scene sceneID="08Y-5d-nJ1">
             <objects>
-                <viewController id="ZVR-YJ-7GJ" sceneMemberID="viewController">
+                <viewController id="ZVR-YJ-7GJ" customClass="NewStudyPlanViewController" customModule="Studify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OEk-df-CGw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,6 +99,9 @@
                                 <state key="normal" title="Agendar">
                                     <color key="titleColor" red="0.29204438799999999" green="0.47257242640000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="putOnSchedule:" destination="ZVR-YJ-7GJ" eventType="touchUpInside" id="bdh-rS-RHu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -119,6 +122,11 @@
                         <viewLayoutGuide key="safeArea" id="eiv-Yx-DPd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Novo estudo" id="ncg-RB-Kc1"/>
+                    <connections>
+                        <outlet property="studyPlanDateTime" destination="t8c-JR-JkL" id="Zpb-FT-6SZ"/>
+                        <outlet property="studyPlanSubject" destination="B3D-Lu-bfF" id="pnp-l5-0MH"/>
+                        <outlet property="studyPlanTitle" destination="Ub3-5B-Kkw" id="ULh-uG-QTm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Nx-ea-oCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
