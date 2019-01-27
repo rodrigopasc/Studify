@@ -43,6 +43,11 @@ class StudyPlansTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let studyPlan = realm.objects(StudyPlan.self)[indexPath.row]
+            try! realm.write {
+                realm.delete(studyPlan)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
         }
     }
 }
