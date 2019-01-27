@@ -15,6 +15,10 @@ class NewStudyPlanViewController: UIViewController {
     @IBOutlet weak var subjectToSave: UITextField!
     @IBOutlet weak var dateTimeToSave: UIDatePicker!
     
+    let notificationContent = UNMutableNotificationContent()
+    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false)
+    let realm = try! Realm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,15 +33,22 @@ class NewStudyPlanViewController: UIViewController {
         newStudyPlan.done = false
         newStudyPlan.id = String(Date().timeIntervalSince1970)
         save(studyPlanToSave: newStudyPlan)
+        setupNotification(id: newStudyPlan.id, subject: newStudyPlan.subject)
+        navigationController!.popViewController(animated: true)
     }
     
     func save(studyPlanToSave: Object) {
-        let realm = try! Realm()
-        
         try! realm.write {
             realm.add(studyPlanToSave)
         }
+    }
+    
+    func setupNotification(id: String, subject: String) {
+        notificationContent.title = "É hora de estudar! 🤓"
+        notificationContent.subtitle = "Chegou o momento de aprender \(subject)"
+        notificationContent.categoryIdentifier = "Studify"
         
-        navigationController!.popViewController(animated: true)
+        let request = UNNotificationRequest(identifier: id, content: notificationContent, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 }
