@@ -22,6 +22,7 @@ class NewStudyPlanViewController: UIViewController {
         super.viewDidLoad()
 
         dateTimeToSave.minimumDate = Date()
+        self.hideKeyboard()
     }
     
     @IBAction func putOnSchedule(_ sender: UIButton) {
@@ -32,7 +33,7 @@ class NewStudyPlanViewController: UIViewController {
         newStudyPlan.done = false
         newStudyPlan.id = String(Date().timeIntervalSince1970)
         save(studyPlanToSave: newStudyPlan)
-        setupNotification(id: newStudyPlan.id, body: newStudyPlan.subject, remindAt: newStudyPlan.remindAt!)
+        setupNotification(id: newStudyPlan.id, title: newStudyPlan.title, body: newStudyPlan.subject, remindAt: newStudyPlan.remindAt!)
         navigationController!.popViewController(animated: true)
     }
     
@@ -42,8 +43,8 @@ class NewStudyPlanViewController: UIViewController {
         }
     }
     
-    func setupNotification(id: String, body: String, remindAt: Date) {
-        notificationContent.title = "É hora de estudar! 🤓"
+    func setupNotification(id: String, title: String, body: String, remindAt: Date) {
+        notificationContent.title = "É hora de estudar \(title)! 🤓"
         notificationContent.body = "Chegou o momento de aprender \(body)"
         notificationContent.categoryIdentifier = "Studify"
         
@@ -51,5 +52,23 @@ class NewStudyPlanViewController: UIViewController {
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let request = UNNotificationRequest(identifier: id, content: notificationContent, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+}
+
+extension UIViewController
+{
+    func hideKeyboard()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+        
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
     }
 }

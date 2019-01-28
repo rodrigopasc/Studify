@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wF8-pt-VsZ">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,32 +15,41 @@
             <objects>
                 <tableViewController id="y4d-HT-W1q" customClass="StudyPlansTableViewController" customModule="Studify" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yWd-1J-kGd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="wQ2-z3-3md" detailTextLabel="A5i-pF-lbj" style="IBUITableViewCellStyleValue1" id="aPq-X8-Y4A">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aPq-X8-Y4A" id="BOS-pL-tZD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wQ2-z3-3md">
-                                            <rect key="frame" x="16.000000000000004" y="11.999999999999998" width="33.333333333333336" height="20.333333333333332"/>
+                                            <rect key="frame" x="20.000000000000004" y="11.999999999999998" width="33.333333333333336" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="A5i-pF-lbj">
-                                            <rect key="frame" x="315" y="11.999999999999998" width="44" height="20.333333333333332"/>
+                                            <rect key="frame" x="350" y="11.999999999999998" width="44" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.29204438799999999" green="0.47257242640000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                     </subviews>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
                                 </tableViewCellContentView>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
@@ -57,6 +66,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Meus estudos" id="9cm-mP-5og">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ELh-az-9Sf">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <segue destination="ZVR-YJ-7GJ" kind="show" id="SUq-Pw-3JO"/>
                             </connections>
@@ -78,11 +90,11 @@
             <objects>
                 <viewController id="ZVR-YJ-7GJ" customClass="NewStudyPlanViewController" customModule="Studify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OEk-df-CGw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Título" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ub3-5B-Kkw">
-                                <rect key="frame" x="25" y="158" width="320" height="30"/>
+                                <rect key="frame" x="25" y="158" width="364" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -91,7 +103,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Assunto" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B3D-Lu-bfF">
-                                <rect key="frame" x="25" y="196" width="320" height="30"/>
+                                <rect key="frame" x="25" y="196" width="364" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -100,7 +112,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="t8c-JR-JkL">
-                                <rect key="frame" x="25" y="234" width="320" height="216"/>
+                                <rect key="frame" x="25" y="234" width="364" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="570308148.83594096">
                                     <!--2019-01-27 18:55:48 +0000-->
                                 </date>
@@ -115,11 +127,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lum-dw-HKx">
-                                <rect key="frame" x="25" y="435" width="74" height="36"/>
+                                <rect key="frame" x="25" y="436" width="74" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Agendar">
                                     <color key="titleColor" red="0.29204438799999999" green="0.47257242640000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="putOnSchedule:" destination="ZVR-YJ-7GJ" eventType="touchUpInside" id="bdh-rS-RHu"/>
                                 </connections>
@@ -127,25 +142,31 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="B3D-Lu-bfF" firstAttribute="trailing" secondItem="t8c-JR-JkL" secondAttribute="trailing" id="6cZ-nj-F5J"/>
-                            <constraint firstItem="Lum-dw-HKx" firstAttribute="leading" secondItem="t8c-JR-JkL" secondAttribute="leading" id="76t-7r-s8o"/>
-                            <constraint firstItem="rHH-NM-uR5" firstAttribute="leading" secondItem="t8c-JR-JkL" secondAttribute="leading" id="Anf-XW-JIl"/>
-                            <constraint firstItem="B3D-Lu-bfF" firstAttribute="leading" secondItem="rHH-NM-uR5" secondAttribute="leading" id="BTW-jD-jKq"/>
-                            <constraint firstItem="Ub3-5B-Kkw" firstAttribute="leading" secondItem="rHH-NM-uR5" secondAttribute="leading" id="Ban-eD-ukw"/>
-                            <constraint firstItem="rHH-NM-uR5" firstAttribute="top" secondItem="OEk-df-CGw" secondAttribute="topMargin" constant="77" id="IgT-5F-GWf"/>
-                            <constraint firstItem="eiv-Yx-DPd" firstAttribute="bottom" secondItem="Lum-dw-HKx" secondAttribute="bottom" constant="307" id="JcX-aW-Yo7"/>
-                            <constraint firstItem="Ub3-5B-Kkw" firstAttribute="trailing" secondItem="B3D-Lu-bfF" secondAttribute="trailing" id="Xbg-E2-oYN"/>
-                            <constraint firstItem="B3D-Lu-bfF" firstAttribute="top" secondItem="Ub3-5B-Kkw" secondAttribute="bottom" constant="8" symbolic="YES" id="cjw-DO-FzA"/>
-                            <constraint firstItem="t8c-JR-JkL" firstAttribute="top" secondItem="B3D-Lu-bfF" secondAttribute="bottom" constant="8" symbolic="YES" id="e2q-xa-jUh"/>
-                            <constraint firstItem="Ub3-5B-Kkw" firstAttribute="leading" secondItem="eiv-Yx-DPd" secondAttribute="leading" constant="25" id="rkV-ai-CrI"/>
-                            <constraint firstItem="Ub3-5B-Kkw" firstAttribute="top" secondItem="eiv-Yx-DPd" secondAttribute="top" constant="18" id="zb0-Ks-uTu"/>
+                            <constraint firstItem="t8c-JR-JkL" firstAttribute="leading" secondItem="Lum-dw-HKx" secondAttribute="leading" id="3JN-ct-7Ue"/>
+                            <constraint firstItem="Ub3-5B-Kkw" firstAttribute="leading" secondItem="eiv-Yx-DPd" secondAttribute="leading" constant="25" id="51M-0V-Jd2"/>
+                            <constraint firstItem="Ub3-5B-Kkw" firstAttribute="trailing" secondItem="B3D-Lu-bfF" secondAttribute="trailing" id="DmH-Xc-nFR"/>
+                            <constraint firstItem="B3D-Lu-bfF" firstAttribute="top" secondItem="Ub3-5B-Kkw" secondAttribute="bottom" constant="8" symbolic="YES" id="JLw-XW-k4n"/>
+                            <constraint firstItem="B3D-Lu-bfF" firstAttribute="leading" secondItem="rHH-NM-uR5" secondAttribute="leading" id="MQh-1E-JZa"/>
+                            <constraint firstItem="t8c-JR-JkL" firstAttribute="top" secondItem="B3D-Lu-bfF" secondAttribute="bottom" constant="8" symbolic="YES" id="O7M-k3-5oH"/>
+                            <constraint firstItem="B3D-Lu-bfF" firstAttribute="trailing" secondItem="t8c-JR-JkL" secondAttribute="trailing" id="Wua-5D-mFe"/>
+                            <constraint firstItem="Lum-dw-HKx" firstAttribute="leading" secondItem="eiv-Yx-DPd" secondAttribute="leading" constant="25" id="YX9-Np-g7p"/>
+                            <constraint firstItem="Ub3-5B-Kkw" firstAttribute="leading" secondItem="rHH-NM-uR5" secondAttribute="leading" id="dth-5v-Dgh"/>
+                            <constraint firstItem="rHH-NM-uR5" firstAttribute="leading" secondItem="t8c-JR-JkL" secondAttribute="leading" id="hVg-uK-VAO"/>
+                            <constraint firstItem="Ub3-5B-Kkw" firstAttribute="centerX" secondItem="OEk-df-CGw" secondAttribute="centerX" id="iFY-jC-R5P"/>
+                            <constraint firstItem="Lum-dw-HKx" firstAttribute="top" secondItem="B3D-Lu-bfF" secondAttribute="bottom" constant="210" id="ivh-Ql-TSZ"/>
+                            <constraint firstItem="rHH-NM-uR5" firstAttribute="top" secondItem="OEk-df-CGw" secondAttribute="topMargin" constant="77" id="psH-qA-Fxp"/>
+                            <constraint firstItem="Ub3-5B-Kkw" firstAttribute="top" secondItem="eiv-Yx-DPd" secondAttribute="top" constant="18" id="wHh-qA-Pdc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eiv-Yx-DPd"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <navigationItem key="navigationItem" title="Novo estudo" id="ncg-RB-Kc1"/>
+                    <navigationItem key="navigationItem" title="Novo estudo" id="ncg-RB-Kc1">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationItem>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
                     </userDefinedRuntimeAttributes>
@@ -165,10 +186,16 @@
                 <navigationController id="wF8-pt-VsZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="7Zk-ik-Hpi">
-                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="y4d-HT-W1q" kind="relationship" relationship="rootViewController" id="k6h-0d-F6a"/>
                     </connections>

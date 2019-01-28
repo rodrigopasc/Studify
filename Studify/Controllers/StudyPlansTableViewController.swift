@@ -60,8 +60,8 @@ class StudyPlansTableViewController: UITableViewController {
         if editingStyle == .delete {
             let studyPlan = realm.objects(StudyPlan.self)[indexPath.row]
             try! realm.write {
-                realm.delete(studyPlan)
                 UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [studyPlan.id])
+                realm.delete(studyPlan)
                 tableView.deleteRows(at: [indexPath], with: .automatic)
             }
         }
