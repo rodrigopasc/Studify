@@ -1,6 +1,6 @@
 # Studify
 Manage your time & plan your learning challenges.
-> This app was made for learning about iOS notifications. I hope you enjoy - and maybe learn how to code with Swift.
+> This app was made to learn about iOS notifications. I hope you enjoy - and maybe learn how to code with Swift.
 <hr />
 
 ## Screenshots
