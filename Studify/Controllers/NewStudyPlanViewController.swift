@@ -44,8 +44,8 @@ class NewStudyPlanViewController: UIViewController {
     }
     
     func setupNotification(id: String, title: String, body: String, remindAt: Date) {
-        notificationContent.title = "É hora de estudar \(title)! 🤓"
-        notificationContent.body = "Chegou o momento de aprender \(body)"
+        notificationContent.title = "It is time to study \(title)! 🤓"
+        notificationContent.body = "Get your stuff and we shall learn \(body)"
         notificationContent.categoryIdentifier = "Studify"
         
         let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: remindAt)

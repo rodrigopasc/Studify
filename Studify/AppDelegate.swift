@@ -31,8 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        let confirmAction = UNNotificationAction(identifier: "Confirm", title: "Já estudei isso! 😉", options: [.foreground])
-        let cancelAction = UNNotificationAction(identifier: "Cancel", title: "Cancelar", options: [])
+        let confirmAction = UNNotificationAction(identifier: "Confirm", title: "I already did! 😉", options: [.foreground])
+        let cancelAction = UNNotificationAction(identifier: "Cancel", title: "Cancel", options: [])
         let category = UNNotificationCategory(identifier: "Studify", actions: [confirmAction, cancelAction], intentIdentifiers: [], options: [.customDismissAction])
         
         notificationCenter.setNotificationCategories([category])
