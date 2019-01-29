@@ -6,10 +6,10 @@ Manage your time & plan your learning challenges.
 ## Screenshots
 
 <p align="center">
+  <img src="https://i.imgur.com/rCth1gK.png" width="24%" alt="Plans" />
   <img src="https://i.imgur.com/9i5btn9.png" width="24%" alt="New plan" />
-    <img src="https://i.imgur.com/rCth1gK.png" width="24%" alt="Plans" />
-    <img src="https://i.imgur.com/enZ9meR.png" width="24%" alt="Notification" />
-    <img src="https://i.imgur.com/Z3sfSdd.png" width="24%" alt="Notification actions" />
+  <img src="https://i.imgur.com/enZ9meR.png" width="24%" alt="Notification" />
+  <img src="https://i.imgur.com/Z3sfSdd.png" width="24%" alt="Notification actions" />
 </p>
 
 ## Dependencies
