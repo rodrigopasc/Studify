@@ -167,7 +167,7 @@
                         <viewLayoutGuide key="safeArea" id="eiv-Yx-DPd"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Plan" id="ncg-RB-Kc1">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="x3r-JW-cxs">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="x3r-JW-cxs">
                             <connections>
                                 <action selector="putOnSchedule:" destination="ZVR-YJ-7GJ" id="Ffu-fl-tBN"/>
                             </connections>
