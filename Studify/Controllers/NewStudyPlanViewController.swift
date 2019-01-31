@@ -11,6 +11,7 @@ import UserNotifications
 import RealmSwift
 
 class NewStudyPlanViewController: UIViewController {
+    
     @IBOutlet weak var titleToSave: UITextField!
     @IBOutlet weak var subjectToSave: UITextField!
     @IBOutlet weak var dateTimeToSave: UIDatePicker!
@@ -25,7 +26,8 @@ class NewStudyPlanViewController: UIViewController {
         self.hideKeyboard()
     }
     
-    @IBAction func putOnSchedule(_ sender: UIButton) {
+    
+    @IBAction func putOnSchedule(_ sender: UIBarButtonItem) {
         let newStudyPlan = StudyPlan()
         newStudyPlan.title = titleToSave.text!
         newStudyPlan.subject = subjectToSave.text!
